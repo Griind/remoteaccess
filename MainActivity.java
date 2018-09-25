@@ -22,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
     }
 
     public void login(View view) {
         EditText login = findViewById(R.id.loginId);
         EditText password = findViewById(R.id.passwordId);
-        if (!login.getText().toString().equals("admin") && !password.getText().toString().equals("password")) {
+        if (login.getText().toString().equals("admin") && password.getText().toString().equals("qwerty")) {
             startActivity(new Intent(MainActivity.this, OnOfActivity.class));
-
 
         } else {
             Toast toast = Toast.makeText(getApplicationContext(), "Login or password is incorrect", Toast.LENGTH_LONG);
